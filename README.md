@@ -11,3 +11,14 @@ Nuestra red neuronal estara conformada por dos capas ocultas de 64 neuronas cada
 
 Como se puede observar en la imagen de arriba, la capa de salida del critico va a ser lineal porque es la encargada de calcular un numero flotante que representa la recompensa descontada esperada para cada estado. En cambio el actor va a tener una capa de salida Softmax porque va a calcular la probabilidad para cada accion en un determinado estado.
 
+A continuacion se detallara en vista general como funciona el proceso de entrenamiento de la red neuronal:  
+
+![ddddd](https://user-images.githubusercontent.com/95035101/204089174-921bc103-5d3d-40b9-a967-91d2f2cb6d9a.png)
+
+## Sobre el Codigo
+Un punto muy importante a estudiar sobre el codigo es la funcion de perdida del Actor devido a que es sumamente necesaria para el buen funcionamiento del algoritmo, y a su vez es relativamente mas compleja.
+
+![z](https://user-images.githubusercontent.com/95035101/204089533-42842640-5f2d-455f-9f3d-c85c61d7f356.png)
+
+Esta funcion sirve para que nosotros le podamos pasar numeros enteros las etiquetas y los valores predichos. En el caso de las etiquetas, estas deben representar numeros enteros. Por otro lado los valores predichos deben ser arreglos con elementos de numeros flotantes, los cuales cada uno representara la probabilidad de hacer esa accion
+
