@@ -20,5 +20,11 @@ Un punto muy importante a estudiar sobre el codigo es la funcion de perdida del 
 
 ![z](https://user-images.githubusercontent.com/95035101/204089533-42842640-5f2d-455f-9f3d-c85c61d7f356.png)
 
-Esta funcion sirve para que nosotros le podamos pasar numeros enteros las etiquetas y los valores predichos. En el caso de las etiquetas, estas deben representar numeros enteros. Por otro lado los valores predichos deben ser arreglos con elementos de numeros flotantes, los cuales cada uno representara la probabilidad de hacer esa accion
+Esta funcion sirve para que nosotros le podamos pasar numeros enteros las etiquetas y los valores predichos. En el caso de las etiquetas, estas deben representar numeros enteros. Por otro lado los valores predichos deben ser arreglos con elementos de numeros flotantes, los cuales cada uno representara la probabilidad de hacer esa accion.
+
+Al definir la funcion tambien le pasamos dos parametros: from_logits y reduction.  
+* from_logits: Si se espera que y_pred sea un tensor logits. Por defecto, asumimos que y_pred codifica una distribución de probabilidad.  
+* reduction: Tipo de tf.keras.losses.Reducción a aplicar al siniestro. El valor predeterminado es AUTO. AUTO indica que la opción de reducción estará determinada por el contexto de uso. Para casi todos los casos, el valor predeterminado es SUM_OVER_BATCH_SIZE. Cuando se usa con tf.distribute.Strategy, fuera de los bucles de entrenamiento integrados, como tf.keras compile and fit, el uso de AUTO o SUM_OVER_BATCH_SIZE generará un error. Consulte este tutorial de capacitación personalizado para obtener más detalles.
+
+Para mas informacion sobre esta funcion puedes visitar este enlace: https://www.tensorflow.org/api_docs/python/tf/keras/losses/SparseCategoricalCrossentropy
 
